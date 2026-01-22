@@ -10,12 +10,6 @@ body {
     background: #0d0d0d;
     color: white;
     line-height: 1.6;
-
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: url("images/background.gif") center center / cover no-repeat fixed;
-    color: black;
-
 }
 
 /* === HEADER & NAVBAR === */
