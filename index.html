@@ -2,38 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demon Slayer Encyclopedia</title>
+    <title>Demon Slayer Fan Site</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ================== HERO SECTION ================== -->
+<!-- NAVBAR -->
+<header>
+    <h1 class="logo">Demon Slayer</h1>
+    <nav id="navbar">
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#characters">Characters</a>
+            <a href="#hashira">Hashira</a>
+            <a href="#uppermoons">Upper Moons</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+            <a href="#" onclick="toggleDarkMode()">🌓</a>
+        </div>
+    </nav>
+</header>
+
 <section id="home" class="hero">
-    <video autoplay muted loop class="bg-video">
-        <source src="videos/demon-slayer-bg.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="hero-text">
-        <h1>Become a Demon Slayer</h1>
-        <p>Explore the world of Kimetsu no Yaiba</p>
-        <button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
-            Learn More
-        </button>
-    </div>
+  <!-- Background video -->
+  <video autoplay muted loop class="bg-video">
+    <source src="videos/demon-slayer-bg.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Hero text overlay -->
+  <div class="hero-text">
+      <h2>Become a Demon Slayer</h2>
+      <p>Explore the world of Kimetsu no Yaiba</p>
+      <button onclick="scrollToSection('about')">Explore</button>
+  </div>
 </section>
 
-<!-- ================== ABOUT SECTION ================== -->
+
+<!-- ABOUT -->
 <section id="about" class="about">
     <h2>About Demon Slayer</h2>
     <p>
-        Demon Slayer: Kimetsu no Yaiba follows Tanjiro Kamado, a kind-hearted boy whose family is slaughtered by demons. 
-        He joins the Demon Slayer Corps to fight evil and protect humanity, while seeking a cure for his sister, Nezuko, who became a demon. 
-        Together with his friends, they face powerful foes and uncover the secrets of demons and the world they inhabit.
+        Demon Slayer: Kimetsu no Yaiba follows Tanjiro Kamado,
+        a kind-hearted boy who becomes a demon slayer after his
+        family is slaughtered and his sister Nezuko is turned into a demon.
+        The series blends action, emotion, and breathtaking animation.
     </p>
 </section>
 
-<!-- ================== CHARACTERS SECTION ================== -->
+<!-- CHARACTERS -->
+<section id="characters" class="cards">
+    <h2>Main Characters</h2>
+    <div class="card-container">
+        <!-- ================== CHARACTERS SECTION ================== -->
 <section id="characters" class="cards">
     <h2>Main Characters</h2>
     <div class="card-container">
@@ -95,6 +118,7 @@
 <section id="hashira" class="cards dark">
     <h2>Hashira (Pillars)</h2>
     <div class="card-container">
+        <!-- Kyojuro Rengoku -->
         <div class="flip-card" onclick="openModal('rengoku')">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
@@ -107,6 +131,7 @@
             </div>
         </div>
 
+        <!-- Giyu Tomioka -->
         <div class="flip-card" onclick="openModal('giyu')">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
@@ -119,6 +144,7 @@
             </div>
         </div>
 
+        <!-- Shinobu Kocho -->
         <div class="flip-card" onclick="openModal('shinobu')">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
@@ -131,6 +157,7 @@
             </div>
         </div>
 
+        <!-- Tengen Uzui -->
         <div class="flip-card" onclick="openModal('tengen')">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
@@ -143,6 +170,7 @@
             </div>
         </div>
 
+        <!-- Muichiro Tokito -->
         <div class="flip-card" onclick="openModal('muichiro')">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
@@ -161,6 +189,7 @@
 <section id="uppermoons" class="cards">
     <h2>Upper Moons (Demons)</h2>
     <div class="card-container">
+        <!-- Kokushibo -->
         <div class="flip-card" onclick="openModal('kokushibo')">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
@@ -173,6 +202,7 @@
             </div>
         </div>
 
+        <!-- Doma -->
         <div class="flip-card" onclick="openModal('doma')">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
@@ -185,6 +215,7 @@
             </div>
         </div>
 
+        <!-- Akaza -->
         <div class="flip-card" onclick="openModal('akaza')">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
@@ -197,6 +228,7 @@
             </div>
         </div>
 
+        <!-- Hantengu -->
         <div class="flip-card" onclick="openModal('hantengu')">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
@@ -209,6 +241,7 @@
             </div>
         </div>
 
+        <!-- Gyokko -->
         <div class="flip-card" onclick="openModal('gyokko')">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
@@ -221,6 +254,7 @@
             </div>
         </div>
 
+        <!-- Kaigaku -->
         <div class="flip-card" onclick="openModal('kaigaku')">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
@@ -235,15 +269,119 @@
     </div>
 </section>
 
-<!-- ================== MODAL ================== -->
-<div id="characterModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <img id="modalImage" src="" alt="">
-    <h3 id="modalName"></h3>
-    <p id="modalDescription"></p>
-  </div>
+        <div class="flip-card" onclick="openModal('tanjiro')">
+            <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Tanjiro Kamado</h3></div>
+                <div class="flip-card-back">
+                    A kind-hearted boy whose family was slaughtered by demons, leaving only his sister Nezuko alive—but transformed into a demon. Determined to cure her and protect others, Tanjiro joins the Demon Slayer Corps, mastering Water Breathing and later the legendary Sun Breathing.
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card" onclick="openModal('nezuko')">
+            <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Nezuko Kamado</h3></div>
+                <div class="flip-card-back">
+                    Nezuko is Tanjiro’s younger sister who was turned into a demon but retained her humanity. She refuses to eat humans and instead protects them. Her Blood Demon Art allows her to manipulate flames that harm demons but not humans.
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card" onclick="openModal('zenitsu')">
+            <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Zenitsu Agatsuma</h3></div>
+                <div class="flip-card-back">
+                    A cowardly but talented swordsman, Zenitsu constantly doubts himself. However, when unconscious, his true strength emerges. He is a master of Thunder Breathing’s first form, moving at blinding speed and defeating enemies before they can react.
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card" onclick="openModal('inosuke')">
+            <div class="flip-card-inner">
+                <div class="flip-card-front"><h3>Inosuke Hashibira</h3></div>
+                <div class="flip-card-back">
+                    Raised by boars in the mountains, Inosuke is aggressive and wild. He created his own Beast Breathing technique and uses dual serrated swords. Despite his rough nature, he deeply cares about his friends and grows stronger through teamwork.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HASHIRA -->
+<section id="hashira" class="cards dark">
+    <h2>Hashira</h2>
+    <div class="card-container">
+        <div class="card" onclick="openModal('rengoku')">🔥 Kyojuro Rengoku – Flame Hashira</div>
+        <div class="card" onclick="openModal('giyu')">🌊 Giyu Tomioka – Water Hashira</div>
+        <div class="card" onclick="openModal('shinobu')">🦋 Shinobu Kocho – Insect Hashira</div>
+        <div class="card" onclick="openModal('tengen')">🎧 Tengen Uzui – Sound Hashira</div>
+        <div class="card" onclick="openModal('muichiro')">🌫 Muichiro Tokito – Mist Hashira</div>
+    </div>
+</section>
+
+<!-- UPPER MOONS -->
+<section id="uppermoons" class="cards">
+    <h2>Upper Moons</h2>
+    <div class="card-container">
+        <div class="card" onclick="openModal('kokushibo')">Kokushibo – Upper Moon One</div>
+        <div class="card" onclick="openModal('doma')">Doma – Upper Moon Two</div>
+        <div class="card" onclick="openModal('akaza')">Akaza – Upper Moon Three</div>
+        <div class="card" onclick="openModal('hantengu')">Hantengu – Upper Moon Four</div>
+        <div class="card" onclick="openModal('gyokko')">Gyokko – Upper Moon Five</div>
+        <div class="card" onclick="openModal('kaigaku')">Kaigaku – Upper Moon Six</div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+        <!-- Main characters -->
+        <img src="images/tanjiro.jpg" alt="Tanjiro Kamado" class="gallery-img" data-character="tanjiro">
+        <img src="images/nezuko.jpg" alt="Nezuko Kamado" class="gallery-img" data-character="nezuko">
+        <img src="images/zenitsu.jpg" alt="Zenitsu Agatsuma" class="gallery-img" data-character="zenitsu">
+        <img src="images/inosuke.jpg" alt="Inosuke Hashibira" class="gallery-img" data-character="inosuke">
+        <!-- Hashira -->
+        <img src="images/rengoku.jpg" alt="Kyojuro Rengoku" class="gallery-img" data-character="rengoku">
+        <img src="images/giyu.jpg" alt="Giyu Tomioka" class="gallery-img" data-character="giyu">
+        <img src="images/shinobu.jpg" alt="Shinobu Kocho" class="gallery-img" data-character="shinobu">
+        <img src="images/tengen.jpg" alt="Tengen Uzui" class="gallery-img" data-character="tengen">
+        <img src="images/muichiro.jpg" alt="Muichiro Tokito" class="gallery-img" data-character="muichiro">
+        <!-- Upper Moons -->
+        <img src="images/kokushibo.jpg" alt="Kokushibo" class="gallery-img" data-character="kokushibo">
+        <img src="images/doma.jpg" alt="Doma" class="gallery-img" data-character="doma">
+        <img src="images/akaza.jpg" alt="Akaza" class="gallery-img" data-character="akaza">
+        <img src="images/hantengu.jpg" alt="Hantengu" class="gallery-img" data-character="hantengu">
+        <img src="images/gyokko.jpg" alt="Gyokko" class="gallery-img" data-character="gyokko">
+        <img src="images/kaigaku.jpg" alt="Kaigaku" class="gallery-img" data-character="kaigaku">
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Your Message"></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 Demon Slayer Fan Website</p>
+</footer>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modal-text"></div>
+    </div>
 </div>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bg-music" src="https://us-tuna-sounds images.voicemod.net/8a1e3ec…f-8e02-85fe7a06d25a-1753478545772-thumbnailM.webp" autoplay loop></audio>
 
 <script src="script.js"></script>
 </body>
